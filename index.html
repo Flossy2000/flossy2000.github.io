@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Flossy D'souza | Data Analyst Portfolio</title>
+
+  <meta name="description"
+        content="Flossy D'souza — Data Analyst and Data Science professional based in Berlin. Portfolio of analytics, Power BI, Python, SQL, machine learning and data visualization projects.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --navy: #12233f;
+      --blue: #2563eb;
+      --light-blue: #eff6ff;
+      --dark: #172033;
+      --text: #374151;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --light: #f8fafc;
+      --border: #e5e7eb;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 95px 0 80px;
+      background:
+        linear-gradient(135deg, #f8fbff 0%, #ffffff 55%, #eff6ff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 1.05;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero h2 {
+      font-size: 25px;
+      color: var(--dark);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--navy);
+      background: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .hero-card {
+      background: var(--navy);
+      color: white;
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 20px 50px rgba(18,35,63,0.15);
+    }
+
+    .hero-card h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .stat {
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .stat:last-child {
+      border-bottom: none;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+
+    .stat span {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 85px 0;
+    }
+
+    .section-light {
+      background: var(--light);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+
+    .about-box {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: white;
+    }
+
+    .about-box h3 {
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .skill-card h3 {
+      color: var(--navy);
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .project-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(15,23,42,0.09);
+    }
+
+    .project-top {
+      height: 170px;
+      background:
+        linear-gradient(135deg, #172b4d, #2563eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .project-top h3 {
+      font-size: 25px;
+    }
+
+    .project-content {
+      padding: 28px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .tag {
+      background: var(--light-blue);
+      color: #1d4ed8;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .project-link {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    /* EXPERIENCE */
+    .timeline {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .experience {
+      background: white;
+      border-left: 4px solid var(--blue);
+      padding: 25px 30px;
+      margin-bottom: 25px;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 0 5px 20px rgba(15,23,42,0.04);
+    }
+
+    .experience h3 {
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .experience .meta {
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .experience p {
+      color: var(--muted);
+    }
+
+    /* CERTIFICATIONS */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .cert-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .cert-card h3 {
+      color: var(--navy);
+      margin-bottom: 7px;
+    }
+
+    .cert-card p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      background: var(--navy);
+      color: white;
+      padding: 50px 30px;
+      border-radius: 20px;
+    }
+
+    .contact-box h2 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contact-links a {
+      color: white;
+      font-weight: 700;
+    }
+
+    .contact-links a:hover {
+      color: #93c5fd;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .projects-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">Flossy D'souza</div>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <div class="eyebrow">Data Analytics Portfolio</div>
+
+        <h1>
+          Flossy <span>D'souza</span>
+        </h1>
+
+        <h2>Data Analyst | Data Science | Business Intelligence</h2>
+
+        <p>
+          Turning raw data into clear insights, meaningful visualizations,
+          and practical business decisions through analytics.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary"
+             href="https://github.com/Flossy2000"
+             target="_blank">
+             View GitHub
+          </a>
+
+          <a class="btn btn-outline"
+             href="https://www.linkedin.com/in/flossydsouza/"
+             target="_blank">
+             LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>What I Work With</h3>
+
+        <div class="stat">
+          <strong>SQL + Python</strong>
+          <span>Data analysis, cleaning and transformation</span>
+        </div>
+
+        <div class="stat">
+          <strong>Power BI + Excel</strong>
+          <span>Dashboards, KPI reporting and visualization</span>
+        </div>
+
+        <div class="stat">
+          <strong>Machine Learning</strong>
+          <span>Predictive analytics and forecasting</span>
+        </div>
+
+        <div class="stat">
+          <strong>Berlin, Germany</strong>
+          <span>Open to Data Analyst opportunities</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>A little about my background and approach to data</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+          <p>
+            I'm a Data Analyst with experience across technical support,
+            data analytics, reporting and data science. My interest in
+            analytics grew from working with technical and operational data
+            and wanting to understand the story behind the numbers.
+          </p>
+
+          <p>
+            I enjoy working through messy datasets, identifying patterns,
+            building dashboards and turning analysis into insights that are
+            easy to understand and useful for decision-making.
+          </p>
+
+          <p>
+            My current focus is building my career in Data Analytics and
+            Business Intelligence while continuing to strengthen my skills
+            in SQL, Python, Power BI and data-driven problem solving.
+          </p>
+        </div>
+
+        <div class="about-box">
+          <h3>Based in Berlin</h3>
+
+          <p>
+            Data Analyst focused on analytics, visualization,
+            business intelligence and practical data-driven solutions.
+          </p>
+
+          <br>
+
+          <strong>LinkedIn</strong>
+          <p>linkedin.com/in/flossydsouza</p>
+
+          <strong>GitHub</strong>
+          <p>github.com/Flossy2000</p>
+
+          <strong>Email</strong>
+          <p>dsouzaflossy2000@gmail.com</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SKILLS -->
+  <section id="skills" class="section-light">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Skills & Technologies</h2>
+        <p>Tools I use to analyze, visualize and communicate data</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Programming & Querying</h3>
+          <p>Python, SQL, Pandas, NumPy</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>BI & Visualization</h3>
+          <p>Power BI, Excel, Tableau, Matplotlib, Seaborn</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Analytics</h3>
+          <p>
+            Data Cleaning, EDA, Statistical Analysis,
+            KPI Reporting, Data Visualization
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Machine Learning</h3>
+          <p>
+            Regression, Decision Trees, Random Forest,
+            XGBoost, Forecasting
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Featured Projects</h2>
+        <p>Selected analytics and data science projects</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+
+          <div class="project-top">
+            <h3>Employee Attrition Analytics</h3>
+          </div>
+
+          <div class="project-content">
+
+            <p>
+              Analyzed 1,470 employee records across 35 variables
+              to identify patterns in employee attrition using Python
+              and data visualization.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Matplotlib</span>
+              <span class="tag">Seaborn</span>
+            </div>
+
+            <a class="project-link"
+               href="https://github.com/Flossy2000/Employee-Attrition-Analytics"
+               target="_blank">
+               View Project on GitHub →
+            </a>
+
+          </div>
+        </div>
+
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+
+          <div class="project-top">
+            <h3>Hierarchical Demand Forecasting</h3>
+          </div>
+
+          <div class="project-content">
+
+            <p>
+              Master's thesis project using the M5 retail dataset
+              for hierarchical demand forecasting, feature engineering,
+              exploratory analysis and predictive modelling.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Forecasting</span>
+            </div>
+
+            <a class="project-link"
+               href="https://github.com/Flossy2000/Hierarchical-Demand-Forecasting-M5"
+               target="_blank">
+               View Project on GitHub →
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section-light">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Experience</h2>
+        <p>Professional experience across technology and analytics</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="experience">
+          <h3>Data Analyst Intern — Uptrail</h3>
+          <div class="meta">January 2026 – March 2026 · Remote</div>
+
+          <p>
+            Completed a structured Data Analytics internship programme
+            focused on practical work with Python, SQL, data analysis,
+            visualization and business intelligence projects.
+          </p>
+        </div>
+
+        <div class="experience">
+          <h3>Data Scientist Intern — Rubixe AI Solutions</h3>
+          <div class="meta">June 2023 – December 2023 · Pune, India</div>
+
+          <p>
+            Worked with SQL and Python for data cleaning, transformation,
+            exploratory analysis, visualization, machine learning and
+            data processing workflows.
+          </p>
+        </div>
+
+        <div class="experience">
+          <h3>Technical Support Engineer — Mphasis</h3>
+          <div class="meta">February 2022 – March 2024 · Pune, India</div>
+
+          <p>
+            Supported enterprise clients while working with technical
+            and operational data, reporting, KPI dashboards, Microsoft
+            environments and process improvement initiatives.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Certifications</h2>
+        <p>Professional certifications in data and analytics</p>
+      </div>
+
+      <div class="cert-grid">
+
+        <div class="cert-card">
+          <h3>Certified Data Scientist</h3>
+          <p>FutureSkills Prime / SSC nasscom</p>
+          <p>Issued: August 2023</p>
+        </div>
+
+        <div class="cert-card">
+          <h3>Certified Data Scientist</h3>
+          <p>IABAC</p>
+          <p>Credential ID: IAB1120173145</p>
+
+          <a class="project-link"
+             href="https://iabac.org/certifications/verify-certificate?certNum=IAB1120173145"
+             target="_blank">
+             Verify Certificate →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-light">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <h2>Let's Connect</h2>
+
+        <p>
+          I'm interested in Data Analyst, Business Intelligence
+          and analytics opportunities.
+        </p>
+
+        <div class="contact-links">
+
+          <a href="mailto:dsouzaflossy2000@gmail.com">
+            Email
+          </a>
+
+          <a href="https://www.linkedin.com/in/flossydsouza/"
+             target="_blank">
+            LinkedIn
+          </a>
+
+          <a href="https://github.com/Flossy2000"
+             target="_blank">
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Flossy D'souza · Data Analyst Portfolio
+  </footer>
+
+</body>
+</html>
