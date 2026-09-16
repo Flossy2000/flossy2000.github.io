@@ -7,7 +7,7 @@
   <title>Flossy D'souza | Data Analyst Portfolio</title>
 
   <meta name="description"
-        content="Flossy D'souza — Data Analyst and Data Science professional based in Berlin. Portfolio of analytics, Power BI, Python, SQL, machine learning and data visualization projects.">
+        content="Flossy D'souza — Data Analyst and Data Science professional based in Berlin.">
 
   <style>
     * {
@@ -51,7 +51,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
@@ -84,8 +84,12 @@
     /* HERO */
     .hero {
       padding: 95px 0 80px;
-      background:
-        linear-gradient(135deg, #f8fbff 0%, #ffffff 55%, #eff6ff 100%);
+      background: linear-gradient(
+        135deg,
+        #f8fbff 0%,
+        #ffffff 55%,
+        #eff6ff 100%
+      );
     }
 
     .hero-grid {
@@ -169,7 +173,7 @@
       color: white;
       border-radius: 18px;
       padding: 35px;
-      box-shadow: 0 20px 50px rgba(18,35,63,0.15);
+      box-shadow: 0 20px 50px rgba(18, 35, 63, 0.15);
     }
 
     .hero-card h3 {
@@ -179,7 +183,7 @@
 
     .stat {
       padding: 15px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .stat:last-child {
@@ -231,7 +235,6 @@
 
     .about-text p {
       margin-bottom: 18px;
-      color: var(--text);
     }
 
     .about-box {
@@ -284,31 +287,36 @@
       border-radius: 18px;
       overflow: hidden;
       transition: 0.25s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(15,23,42,0.09);
+      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.09);
     }
 
     .project-top {
-      height: 170px;
-      background:
-        linear-gradient(135deg, #172b4d, #2563eb);
+      min-height: 155px;
+      background: linear-gradient(135deg, #172b4d, #2563eb);
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       text-align: center;
-      padding: 25px;
+      padding: 28px;
     }
 
     .project-top h3 {
-      font-size: 25px;
+      font-size: 24px;
+      line-height: 1.25;
     }
 
     .project-content {
       padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-content p {
@@ -335,6 +343,53 @@
     .project-link {
       color: var(--blue);
       font-weight: 700;
+      margin-top: auto;
+    }
+
+    /* OTHER PROJECT */
+    .other-projects {
+      margin-top: 55px;
+    }
+
+    .other-projects h3 {
+      color: var(--navy);
+      margin-bottom: 18px;
+      font-size: 25px;
+    }
+
+    .other-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .other-card h4 {
+      color: var(--navy);
+      font-size: 19px;
+      margin-bottom: 6px;
+    }
+
+    .other-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .github-button {
+      flex-shrink: 0;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: white;
+      font-weight: 700;
+    }
+
+    .github-button:hover {
+      background: var(--blue);
     }
 
     /* EXPERIENCE */
@@ -349,7 +404,7 @@
       padding: 25px 30px;
       margin-bottom: 25px;
       border-radius: 0 12px 12px 0;
-      box-shadow: 0 5px 20px rgba(15,23,42,0.04);
+      box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
     }
 
     .experience h3 {
@@ -429,7 +484,6 @@
       color: #93c5fd;
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 25px;
@@ -454,6 +508,11 @@
       .nav-links {
         display: none;
       }
+
+      .other-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     @media (max-width: 600px) {
@@ -474,10 +533,13 @@
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- ==================== NAVIGATION ==================== -->
   <nav>
     <div class="container nav-inner">
-      <div class="logo">Flossy D'souza</div>
+
+      <div class="logo">
+        Flossy D'souza
+      </div>
 
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -487,22 +549,29 @@
         <li><a href="#certifications">Certifications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
     </div>
   </nav>
 
 
-  <!-- HERO -->
+  <!-- ==================== HERO ==================== -->
   <header class="hero">
+
     <div class="container hero-grid">
 
       <div>
-        <div class="eyebrow">Data Analytics Portfolio</div>
+
+        <div class="eyebrow">
+          Data Analytics Portfolio
+        </div>
 
         <h1>
           Flossy <span>D'souza</span>
         </h1>
 
-        <h2>Data Analyst | Data Science | Business Intelligence</h2>
+        <h2>
+          Data Analyst | Data Science | Business Intelligence
+        </h2>
 
         <p>
           Turning raw data into clear insights, meaningful visualizations,
@@ -510,6 +579,7 @@
         </p>
 
         <div class="buttons">
+
           <a class="btn btn-primary"
              href="https://github.com/Flossy2000"
              target="_blank">
@@ -521,11 +591,17 @@
              target="_blank">
              LinkedIn
           </a>
+
         </div>
+
       </div>
 
+
       <div class="hero-card">
-        <h3>What I Work With</h3>
+
+        <h3>
+          What I Work With
+        </h3>
 
         <div class="stat">
           <strong>SQL + Python</strong>
@@ -546,14 +622,17 @@
           <strong>Berlin, Germany</strong>
           <span>Open to Data Analyst opportunities</span>
         </div>
+
       </div>
 
     </div>
+
   </header>
 
 
-  <!-- ABOUT -->
+  <!-- ==================== ABOUT ==================== -->
   <section id="about">
+
     <div class="container">
 
       <div class="section-title">
@@ -561,9 +640,11 @@
         <p>A little about my background and approach to data</p>
       </div>
 
+
       <div class="about-grid">
 
         <div class="about-text">
+
           <p>
             I'm a Data Analyst with experience across technical support,
             data analytics, reporting and data science. My interest in
@@ -582,10 +663,15 @@
             Business Intelligence while continuing to strengthen my skills
             in SQL, Python, Power BI and data-driven problem solving.
           </p>
+
         </div>
 
+
         <div class="about-box">
-          <h3>Based in Berlin</h3>
+
+          <h3>
+            Based in Berlin
+          </h3>
 
           <p>
             Data Analyst focused on analytics, visualization,
@@ -602,15 +688,19 @@
 
           <strong>Email</strong>
           <p>dsouzaflossy2000@gmail.com</p>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
 
-  <!-- SKILLS -->
+  <!-- ==================== SKILLS ==================== -->
   <section id="skills" class="section-light">
+
     <div class="container">
 
       <div class="section-title">
@@ -618,55 +708,89 @@
         <p>Tools I use to analyze, visualize and communicate data</p>
       </div>
 
+
       <div class="skills-grid">
 
         <div class="skill-card">
+
           <h3>Programming & Querying</h3>
-          <p>Python, SQL, Pandas, NumPy</p>
+
+          <p>
+            Python, SQL, Pandas, NumPy
+          </p>
+
         </div>
 
+
         <div class="skill-card">
+
           <h3>BI & Visualization</h3>
-          <p>Power BI, Excel, Tableau, Matplotlib, Seaborn</p>
+
+          <p>
+            Power BI, Excel, Tableau, Matplotlib, Seaborn
+          </p>
+
         </div>
 
+
         <div class="skill-card">
+
           <h3>Analytics</h3>
+
           <p>
             Data Cleaning, EDA, Statistical Analysis,
             KPI Reporting, Data Visualization
           </p>
+
         </div>
 
+
         <div class="skill-card">
+
           <h3>Machine Learning</h3>
+
           <p>
             Regression, Decision Trees, Random Forest,
             XGBoost, Forecasting
           </p>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
 
-  <!-- PROJECTS -->
+  <!-- ==================== PROJECTS ==================== -->
   <section id="projects">
+
     <div class="container">
 
       <div class="section-title">
-        <h2>Featured Projects</h2>
-        <p>Selected analytics and data science projects</p>
+
+        <h2>
+          Featured Projects
+        </h2>
+
+        <p>
+          Selected analytics, BI and data science projects
+        </p>
+
       </div>
 
+
       <div class="projects-grid">
+
 
         <!-- PROJECT 1 -->
         <div class="project-card">
 
           <div class="project-top">
-            <h3>Employee Attrition Analytics</h3>
+            <h3>
+              Employee Attrition Analytics
+            </h3>
           </div>
 
           <div class="project-content">
@@ -674,25 +798,31 @@
             <p>
               Analyzed 1,470 employee records across 35 variables
               to identify patterns in employee attrition using Python
-              and data visualization.
+              and data visualization, with a Power BI dashboard for
+              workforce insights.
             </p>
 
             <div class="tags">
+
               <span class="tag">Python</span>
               <span class="tag">Pandas</span>
               <span class="tag">NumPy</span>
               <span class="tag">Power BI</span>
               <span class="tag">Matplotlib</span>
               <span class="tag">Seaborn</span>
+
             </div>
 
             <a class="project-link"
                href="https://github.com/Flossy2000/Employee-Attrition-Analytics"
                target="_blank">
-               View Project on GitHub →
+
+              View Project on GitHub →
+
             </a>
 
           </div>
+
         </div>
 
 
@@ -700,131 +830,331 @@
         <div class="project-card">
 
           <div class="project-top">
-            <h3>Hierarchical Demand Forecasting</h3>
+
+            <h3>
+              Hierarchical Demand Forecasting & Retail Analytics
+            </h3>
+
           </div>
 
           <div class="project-content">
 
             <p>
-              Master's thesis project using the M5 retail dataset
-              for hierarchical demand forecasting, feature engineering,
-              exploratory analysis and predictive modelling.
+              Master's thesis implementation using the M5 retail dataset
+              for hierarchical demand forecasting and promotion-related
+              analytics, including feature engineering and predictive
+              modelling.
             </p>
 
             <div class="tags">
+
               <span class="tag">Python</span>
               <span class="tag">Pandas</span>
               <span class="tag">NumPy</span>
               <span class="tag">Scikit-learn</span>
               <span class="tag">Machine Learning</span>
               <span class="tag">Forecasting</span>
+
             </div>
 
             <a class="project-link"
                href="https://github.com/Flossy2000/Hierarchical-Demand-Forecasting-M5"
                target="_blank">
-               View Project on GitHub →
+
+              View Project on GitHub →
+
             </a>
 
           </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+
+          <div class="project-top">
+
+            <h3>
+              E-commerce Customer Behavior Analysis
+            </h3>
+
+          </div>
+
+          <div class="project-content">
+
+            <p>
+              Data analytics project exploring customer behavior in an
+              e-commerce setting using Python and Power BI, covering
+              data preprocessing, analysis and dashboard-driven insights.
+            </p>
+
+            <div class="tags">
+
+              <span class="tag">Python</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Data Analysis</span>
+              <span class="tag">Visualization</span>
+
+            </div>
+
+            <a class="project-link"
+               href="https://github.com/Flossy2000/ecommerce-customer-behavior-analysis"
+               target="_blank">
+
+              View Project on GitHub →
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+        <div class="project-card">
+
+          <div class="project-top">
+
+            <h3>
+              Bike Rentals Dashboard
+            </h3>
+
+          </div>
+
+          <div class="project-content">
+
+            <p>
+              Data visualization dashboard project focused on exploring
+              and communicating bike rental data with Python.
+            </p>
+
+            <div class="tags">
+
+              <span class="tag">Python</span>
+              <span class="tag">Data Visualization</span>
+              <span class="tag">Dashboard</span>
+
+            </div>
+
+            <a class="project-link"
+               href="https://github.com/Flossy2000/bike-rentals-dashboard"
+               target="_blank">
+
+              View Project on GitHub →
+
+            </a>
+
+          </div>
+
         </div>
 
       </div>
+
+
+      <!-- OTHER PROJECTS -->
+      <div class="other-projects">
+
+        <h3>
+          Other Project
+        </h3>
+
+        <div class="other-card">
+
+          <div>
+
+            <h4>
+              ML for Quantum Experiment Simulations
+            </h4>
+
+            <p>
+              Machine learning project using modelling to simulate and
+              analyze quantum experiments and extract insights from
+              quantum data.
+            </p>
+
+          </div>
+
+          <a class="github-button"
+             href="https://github.com/Flossy2000/ML-for-Quantum-Experiment-Simulations"
+             target="_blank">
+
+            GitHub →
+
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
+
   </section>
 
 
-  <!-- EXPERIENCE -->
+  <!-- ==================== EXPERIENCE ==================== -->
   <section id="experience" class="section-light">
+
     <div class="container">
 
       <div class="section-title">
-        <h2>Experience</h2>
-        <p>Professional experience across technology and analytics</p>
+
+        <h2>
+          Experience
+        </h2>
+
+        <p>
+          Professional experience across technology and analytics
+        </p>
+
       </div>
+
 
       <div class="timeline">
 
+
         <div class="experience">
-          <h3>Data Analyst Intern — Uptrail</h3>
-          <div class="meta">January 2026 – March 2026 · Remote</div>
+
+          <h3>
+            Data Analyst Intern — Uptrail
+          </h3>
+
+          <div class="meta">
+            January 2026 – March 2026 · Remote
+          </div>
 
           <p>
             Completed a structured Data Analytics internship programme
             focused on practical work with Python, SQL, data analysis,
             visualization and business intelligence projects.
           </p>
+
         </div>
 
+
         <div class="experience">
-          <h3>Data Scientist Intern — Rubixe AI Solutions</h3>
-          <div class="meta">June 2023 – December 2023 · Pune, India</div>
+
+          <h3>
+            Data Scientist Intern — Rubixe AI Solutions
+          </h3>
+
+          <div class="meta">
+            June 2023 – December 2023 · Pune, India
+          </div>
 
           <p>
             Worked with SQL and Python for data cleaning, transformation,
             exploratory analysis, visualization, machine learning and
             data processing workflows.
           </p>
+
         </div>
 
+
         <div class="experience">
-          <h3>Technical Support Engineer — Mphasis</h3>
-          <div class="meta">February 2022 – March 2024 · Pune, India</div>
+
+          <h3>
+            Technical Support Engineer — Mphasis
+          </h3>
+
+          <div class="meta">
+            February 2022 – March 2024 · Pune, India
+          </div>
 
           <p>
             Supported enterprise clients while working with technical
             and operational data, reporting, KPI dashboards, Microsoft
             environments and process improvement initiatives.
           </p>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
 
-  <!-- CERTIFICATIONS -->
+  <!-- ==================== CERTIFICATIONS ==================== -->
   <section id="certifications">
+
     <div class="container">
 
       <div class="section-title">
-        <h2>Certifications</h2>
-        <p>Professional certifications in data and analytics</p>
+
+        <h2>
+          Certifications
+        </h2>
+
+        <p>
+          Professional certifications in data and analytics
+        </p>
+
       </div>
+
 
       <div class="cert-grid">
 
-        <div class="cert-card">
-          <h3>Certified Data Scientist</h3>
-          <p>FutureSkills Prime / SSC nasscom</p>
-          <p>Issued: August 2023</p>
-        </div>
 
         <div class="cert-card">
-          <h3>Certified Data Scientist</h3>
-          <p>IABAC</p>
-          <p>Credential ID: IAB1120173145</p>
+
+          <h3>
+            Certified Data Scientist
+          </h3>
+
+          <p>
+            FutureSkills Prime / SSC nasscom
+          </p>
+
+          <p>
+            Issued: August 2023
+          </p>
+
+        </div>
+
+
+        <div class="cert-card">
+
+          <h3>
+            Certified Data Scientist
+          </h3>
+
+          <p>
+            IABAC
+          </p>
+
+          <p>
+            Credential ID: IAB1120173145
+          </p>
 
           <a class="project-link"
              href="https://iabac.org/certifications/verify-certificate?certNum=IAB1120173145"
              target="_blank">
-             Verify Certificate →
+
+            Verify Certificate →
+
           </a>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
 
-  <!-- CONTACT -->
+  <!-- ==================== CONTACT ==================== -->
   <section id="contact" class="section-light">
 
     <div class="container">
 
       <div class="contact-box">
 
-        <h2>Let's Connect</h2>
+        <h2>
+          Let's Connect
+        </h2>
 
         <p>
           I'm interested in Data Analyst, Business Intelligence
@@ -856,7 +1186,6 @@
   </section>
 
 
-  <!-- FOOTER -->
   <footer>
     © 2026 Flossy D'souza · Data Analyst Portfolio
   </footer>
